@@ -10,7 +10,7 @@ import UIKit
 import BDBOAuth1Manager
 
 class TwitterClient: BDBOAuth1SessionManager {
-
+    
     static let sharedInstance = TwitterClient(baseURL: NSURL(string: "https://api.twitter.com"), consumerKey: "gxecWzOxuT85NmRVRKCAhqJdX", consumerSecret: "CAYWZIiiPke2mWFYzITdojdxw62R52W6eATxWxJSVzSvJ8Jk8r")
 
     var loginSuccess: (() -> ())?
@@ -26,8 +26,6 @@ class TwitterClient: BDBOAuth1SessionManager {
             
             let url = NSURL(string: "https://api.twitter.com/oauth/authorize?oauth_token=\(requestToken.token)")!
             UIApplication.sharedApplication().openURL(url)
-            
-            
             
             }) { (error: NSError!) -> Void in
                 print("error: \(error.localizedDescription)")
@@ -77,16 +75,19 @@ class TwitterClient: BDBOAuth1SessionManager {
             
             success(user)
             
-            print("name: \(user.name)")
-            print("screenname: \(user.screenname)")
-            print("profile url: \(user.profileUrl)")
-            print("description: \(user.tagline)")
-            
             }, failure: { (task: NSURLSessionDataTask?, error: NSError) -> Void in
                 print("error: \(error.localizedDescription)")
                 failure(error)
         })
         
+    }
+    
+    func getUserName() -> String {
+        return User.currentUser!.name as! String
+    }
+    
+    func getImageUrl() -> NSURL {
+        return User.currentUser!.profileUrl!
     }
     
     func logout() {
