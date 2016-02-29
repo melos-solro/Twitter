@@ -9,7 +9,7 @@
 import UIKit
 import AFNetworking
 
-class TweetsViewController: UIViewController {
+class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBAction func onLogoutButton(sender: AnyObject) {
         TwitterClient.sharedInstance.logout()
@@ -23,16 +23,16 @@ class TweetsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         let client = TwitterClient.sharedInstance
         
         TwitterClient.sharedInstance.homeTimeline({ (tweets:[Tweet]) -> () in
         self.tweets = tweets
         self.userNameLabel.text = client.getUserName()
         self.avatarImageView.setImageWithURL(client.getImageUrl())
-            for tweet in tweets {
-                print(tweet.text)
-            }
-            }) { (error:NSError) -> () in
+        }) { (error:NSError) -> () in
             print(error.localizedDescription)
         }
         
@@ -45,21 +45,24 @@ class TweetsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TwitterCell", forIndexPath: indexPath) as! TwitterCell
-        cell.tweet = tweets[indexPath.row]
-        return cell
-    }
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
+        
         if tweets != nil {
             return tweets.count
         } else {
             return 0
         }
     }
-
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("TwitterCell", forIndexPath: indexPath) as! TwitterCell
+        
+        cell.tweet = tweets[indexPath.row]
+        
+        print(tweets![indexPath.row].text)
+        
+        return cell
+    }
     
     /*
     // MARK: - Navigation

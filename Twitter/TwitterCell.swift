@@ -12,13 +12,12 @@ class TwitterCell: UITableViewCell {
 
     
     @IBOutlet weak var tweetText: UITextView!
-    
     @IBOutlet weak var tweetTime: UILabel!
     
     var tweet: Tweet! {
-        didSet {
-            tweetText.text = tweet.text as! String
-            tweetTime.text = tweet.timestamp as? String
+        didSet{
+            tweetText.text = self.tweet.text as! String
+            tweetTime.text = self.tweet.timestamp as! String
         }
     }
     
