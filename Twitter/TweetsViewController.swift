@@ -8,7 +8,7 @@
 
 import UIKit
 
-class tweetsViewController: UIViewController {
+class TweetsViewController: UIViewController {
 
     @IBAction func onLogoutButton(sender: AnyObject) {
         TwitterClient.sharedInstance.logout()
