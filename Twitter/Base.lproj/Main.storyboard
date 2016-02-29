@@ -43,7 +43,7 @@
         <!--Tweets View Controller-->
         <scene sceneID="z6a-Be-d08">
             <objects>
-                <viewController id="oex-UJ-jdW" customClass="tweetsViewController" sceneMemberID="viewController">
+                <viewController id="oex-UJ-jdW" customClass="TweetsViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WGa-zp-vKA"/>
                         <viewControllerLayoutGuide type="bottom" id="uut-Rj-GLI"/>
