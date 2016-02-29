@@ -1,20 +1,32 @@
 //
-//  LoginViewController.swift
+//  TweetsViewController.swift
 //  Twitter
 //
-//  Created by Melos on 2/22/16.
+//  Created by Melos on 2/28/16.
 //  Copyright © 2016 codepath. All rights reserved.
 //
 
 import UIKit
-import BDBOAuth1Manager
 
-class LoginViewController: UIViewController {
+class tweetsViewController: UIViewController {
 
+    var tweets: [Tweet]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        TwitterClient.sharedInstance.homeTimeline({ (tweets:[Tweet]) -> () in
+        self.tweets = tweets
+            for tweet in tweets {
+                print(tweet.text)
+            }
+            }) { (error:NSError) -> () in
+            print(error.localizedDescription)
+        }
+        
         // Do any additional setup after loading the view.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,15 +35,6 @@ class LoginViewController: UIViewController {
     }
     
 
-    @IBAction func onLoginButton(sender: AnyObject) {
-
-        TwitterClient.sharedInstance.login({ () -> () in
-            self.performSegueWithIdentifier("loginSegue", sender: nil)
-        }) { (error: NSError) -> () in
-            print("Error: \(error.localizedDescription)")
-        }
-        
-    }
     /*
     // MARK: - Navigation
 
