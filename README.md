@@ -11,8 +11,8 @@ The following **required** functionality is completed:
 - [X] User can sign in using OAuth login flow
 - [X] User can view last 20 tweets from their home timeline
 - [X] The current signed in user will be persisted across restarts
-- [X] In the home timeline, user can view tweet with the user profile picture, username, tweet text, and timestamp.
-- [X] Retweeting and favoriting should increment the retweet and favorite count.
+- [-] In the home timeline, user can view tweet with the user profile picture, username, tweet text, and timestamp.
+- [ ] Retweeting and favoriting should increment the retweet and favorite count.
 
 The following **optional** features are implemented:
 
@@ -26,8 +26,8 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. 
-2. 
+1. tableView with the API setup was very difficult to properly implement.
+2. How to pass tweets to different parts of the app without duplicating them many times.
 
 ## Video Walkthrough 
 
@@ -40,6 +40,8 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+I was unable to make the app function properly, as I got caught up in trying to pass the tweet text and NSDate objects to the tableView, my app frequently crashed or threw exceptions when trying to pass data to this area.
 
 ## License
 
