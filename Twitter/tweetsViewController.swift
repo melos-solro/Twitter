@@ -10,6 +10,9 @@ import UIKit
 
 class tweetsViewController: UIViewController {
 
+    @IBAction func onLogoutButton(sender: AnyObject) {
+        TwitterClient.sharedInstance.logout()
+    }
     var tweets: [Tweet]!
     
     override func viewDidLoad() {
