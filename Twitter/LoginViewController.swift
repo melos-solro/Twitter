@@ -11,10 +11,14 @@ import BDBOAuth1Manager
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        loginButton.layer.cornerRadius = 4
         // Do any additional setup after loading the view.
+
     }
 
     override func didReceiveMemoryWarning() {

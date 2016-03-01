@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8642633D1C8416CE00F33D1D /* TwitterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8642633C1C8416CE00F33D1D /* TwitterCell.swift */; };
+		867057541C861430005BBE97 /* TwitterLogo_#55acee.png in Resources */ = {isa = PBXBuildFile; fileRef = 867057531C861430005BBE97 /* TwitterLogo_#55acee.png */; };
+		867057571C861963005BBE97 /* like-action.png in Resources */ = {isa = PBXBuildFile; fileRef = 867057561C861963005BBE97 /* like-action.png */; };
+		867057591C86196A005BBE97 /* reply-action.png in Resources */ = {isa = PBXBuildFile; fileRef = 867057581C86196A005BBE97 /* reply-action.png */; };
+		8670575B1C861971005BBE97 /* retweet-action.png in Resources */ = {isa = PBXBuildFile; fileRef = 8670575A1C861971005BBE97 /* retweet-action.png */; };
 		86E016BC1C7C156F00C288B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E016BB1C7C156F00C288B8 /* AppDelegate.swift */; };
 		86E016C11C7C156F00C288B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86E016BF1C7C156F00C288B8 /* Main.storyboard */; };
 		86E016C31C7C156F00C288B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86E016C21C7C156F00C288B8 /* Assets.xcassets */; };
@@ -24,6 +28,10 @@
 		1F61A1644C2B8441DDC401E1 /* Pods_Twitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Twitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		715D301E6252D1471DF18926 /* Pods-Twitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Twitter/Pods-Twitter.debug.xcconfig"; sourceTree = "<group>"; };
 		8642633C1C8416CE00F33D1D /* TwitterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterCell.swift; sourceTree = "<group>"; };
+		867057531C861430005BBE97 /* TwitterLogo_#55acee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TwitterLogo_#55acee.png"; sourceTree = "<group>"; };
+		867057561C861963005BBE97 /* like-action.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like-action.png"; sourceTree = "<group>"; };
+		867057581C86196A005BBE97 /* reply-action.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reply-action.png"; sourceTree = "<group>"; };
+		8670575A1C861971005BBE97 /* retweet-action.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "retweet-action.png"; sourceTree = "<group>"; };
 		86E016B81C7C156F00C288B8 /* Twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E016BB1C7C156F00C288B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86E016C01C7C156F00C288B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +93,10 @@
 				86E016BB1C7C156F00C288B8 /* AppDelegate.swift */,
 				86E016BF1C7C156F00C288B8 /* Main.storyboard */,
 				86E016C21C7C156F00C288B8 /* Assets.xcassets */,
+				8670575A1C861971005BBE97 /* retweet-action.png */,
+				867057581C86196A005BBE97 /* reply-action.png */,
+				867057561C861963005BBE97 /* like-action.png */,
+				867057531C861430005BBE97 /* TwitterLogo_#55acee.png */,
 				86E016C41C7C156F00C288B8 /* LaunchScreen.storyboard */,
 				86E016C71C7C156F00C288B8 /* Info.plist */,
 			);
@@ -188,8 +200,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				867057541C861430005BBE97 /* TwitterLogo_#55acee.png in Resources */,
+				8670575B1C861971005BBE97 /* retweet-action.png in Resources */,
 				86E016C61C7C156F00C288B8 /* LaunchScreen.storyboard in Resources */,
 				86E016C31C7C156F00C288B8 /* Assets.xcassets in Resources */,
+				867057571C861963005BBE97 /* like-action.png in Resources */,
+				867057591C86196A005BBE97 /* reply-action.png in Resources */,
 				86E016C11C7C156F00C288B8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

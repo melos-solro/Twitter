@@ -84,7 +84,7 @@ class TwitterClient: BDBOAuth1SessionManager {
     
     func retweet(string: String, var count: Int){
         
-        POST("1.1/statuses/retweets.json", parameters: ["id":string], progress: nil, success: { (NSURLSessionDataTask, response: AnyObject?) -> Void in
+        TwitterClient.sharedInstance.POST("1.1/statuses/retweet/\(string).json", parameters: nil, progress: nil, success: { (NSURLSessionDataTask, response: AnyObject?) -> Void in
                 count = count + 1
             }, failure: { (task: NSURLSessionDataTask?, error: NSError) -> Void in
                 print("error: \(error.localizedDescription)")
@@ -93,9 +93,11 @@ class TwitterClient: BDBOAuth1SessionManager {
         
     }
     
+    
+    
     func favorite(string: String, var count: Int){
         
-        POST("1.1/statuses/favorites/create.json", parameters: ["id":string], progress: nil, success: { (NSURLSessionDataTask, response: AnyObject?) -> Void in
+        TwitterClient.sharedInstance.POST("1.1/favorites/create.json?id=\(string)", parameters: nil, progress: nil, success: { (NSURLSessionDataTask, response: AnyObject?) -> Void in
                 count = count + 1
             }, failure: { (task: NSURLSessionDataTask?, error: NSError) -> Void in
                 print("error: \(error.localizedDescription)")
