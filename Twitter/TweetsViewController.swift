@@ -36,7 +36,8 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         }) { (error:NSError) -> () in
             print(error.localizedDescription)
         }
-        
+        tableView.separatorStyle = .SingleLine
+        self.tableView.contentInset = UIEdgeInsetsMake(10,0,10,0)
         // Do any additional setup after loading the view.
         tableView.reloadData()
     }
@@ -49,7 +50,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if self.tweets != nil {
-            print("Tweets: \(self.tweets.count)")
+            //print("Tweets: \(self.tweets.count)")
             return self.tweets.count
         } else {
             return 0

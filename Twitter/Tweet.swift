@@ -19,9 +19,11 @@ class Tweet: NSObject {
     var id: NSString?
     var retweetStatus: Bool = false
     var favoriteStatus: Bool = false
+    var userHandle: NSString?
     
     init(dictionary: NSDictionary){
         id = dictionary["id_str"] as? String
+        userHandle = dictionary["user"]!["screen_name"] as?String
         text = dictionary["text"] as? String
         let timestampString = dictionary["created_at"] as? String
         if let timestampString = timestampString {

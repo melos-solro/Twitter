@@ -160,7 +160,7 @@
                                                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="onFavorite:" destination="gU2-Ol-179" eventType="touchUpInside" id="blK-SG-h9q"/>
+                                                        <action selector="onReply:" destination="gU2-Ol-179" eventType="touchUpInside" id="7iG-7N-X4s"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Handle Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mec-1S-aAh">
@@ -216,7 +216,11 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="favoriteButton" destination="Iaz-rK-ryq" id="pHw-Yp-wxY"/>
                                             <outlet property="favoriteLabel" destination="kgX-DY-kKp" id="30k-Pn-5hp"/>
+                                            <outlet property="handleLabel" destination="mec-1S-aAh" id="tWX-Bf-uHl"/>
+                                            <outlet property="replyButton" destination="vxH-nM-pKQ" id="Prg-bh-AF0"/>
+                                            <outlet property="retweetButton" destination="KnF-rb-O3s" id="EgM-m0-pc5"/>
                                             <outlet property="retweetLabel" destination="0FK-vy-bNB" id="5Yd-Ju-b4p"/>
                                             <outlet property="tweetText" destination="vvG-jA-39e" id="9yZ-Hy-dCX"/>
                                             <outlet property="tweetTime" destination="dCT-hs-GeA" id="YJP-bK-Pgj"/>
