@@ -63,13 +63,15 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         tweet = self.tweets![indexPath.row]
         cell.tweet = tweet
         cell.tweetText.text = tweet.text as! String
-        print("\(cell.tweetText.text)")
-        let formatter = NSDateFormatter()
+         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
         cell.tweetTime.text = formatter.stringFromDate(tweet.timestamp!)
         cell.favoriteLabel.text = "Fav: \(tweet.favoritesCount)"
         cell.retweetLabel.text = "RT: \(tweet.retweetCount)"
-        
+        cell.userLabel.text = tweet.username as? String
+        if tweet.userURL != nil {
+            cell.userImageView.setImageWithURL(tweet.userURL!)
+        }
         return cell
     }
     
