@@ -28,10 +28,11 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         
         let client = TwitterClient.sharedInstance
         
-        TwitterClient.sharedInstance.homeTimeline({ (tweets:[Tweet]) -> () in
-        self.tweets = tweets
-        self.userNameLabel.text = client.getUserName()
-        self.avatarImageView.setImageWithURL(client.getImageUrl())
+        TwitterClient.sharedInstance.homeTimeline({ (tweets: [Tweet]) -> () in
+            self.tweets = tweets
+            self.tableView.reloadData()
+            self.userNameLabel.text = client.getUserName()
+            self.avatarImageView.setImageWithURL(client.getImageUrl())
         }) { (error:NSError) -> () in
             print(error.localizedDescription)
         }
@@ -47,19 +48,27 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if tweets != nil {
-            return tweets.count
+        if self.tweets != nil {
+            print("Tweets: \(self.tweets.count)")
+            return self.tweets.count
         } else {
+            print("No tweets found.")
             return 0
         }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var tweet: Tweet!
         let cell = tableView.dequeueReusableCellWithIdentifier("TwitterCell", forIndexPath: indexPath) as! TwitterCell
-        
-        cell.tweet = tweets[indexPath.row]
-        
-        print(tweets![indexPath.row].text)
+        tweet = self.tweets![indexPath.row]
+        cell.tweet = tweet
+        cell.tweetText.text = tweet.text as! String
+        print("\(cell.tweetText.text)")
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        cell.tweetTime.text = formatter.stringFromDate(tweet.timestamp!)
+        cell.favoriteLabel.text = "Fav: \(tweet.favoritesCount)"
+        cell.retweetLabel.text = "RT: \(tweet.retweetCount)"
         
         return cell
     }

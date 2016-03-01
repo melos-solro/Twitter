@@ -14,10 +14,16 @@ class TwitterCell: UITableViewCell {
     @IBOutlet weak var tweetText: UITextView!
     @IBOutlet weak var tweetTime: UILabel!
     
+    @IBOutlet weak var favoriteLabel: UILabel!
+    @IBOutlet weak var retweetLabel: UILabel!
     var tweet: Tweet! {
         didSet{
             tweetText.text = self.tweet.text as! String
-            tweetTime.text = self.tweet.timestamp as! String
+            let formatter = NSDateFormatter()
+            formatter.dateStyle = NSDateFormatterStyle.MediumStyle
+            tweetTime.text = formatter.stringFromDate(self.tweet.timestamp!)
+            favoriteLabel.text = "Fav: \(self.tweet.favoritesCount)"
+            retweetLabel.text = "RT: \(self.tweet.retweetCount)"
         }
     }
     
