@@ -130,7 +130,7 @@
                                                         <action selector="onFavorite:" destination="gU2-Ol-179" eventType="touchUpInside" id="CR0-Z6-AKk"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KnF-rb-O3s">
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KnF-rb-O3s">
                                                     <rect key="frame" x="61" y="104" width="62" height="30"/>
                                                     <state key="normal" title="Button">
                                                         <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -144,6 +144,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="vvG-jA-39e" secondAttribute="trailing" id="11m-ui-pph"/>
+                                                <constraint firstItem="KnF-rb-O3s" firstAttribute="leading" secondItem="kgX-DY-kKp" secondAttribute="trailing" constant="2" id="2eW-Fg-FRo"/>
                                                 <constraint firstItem="0FK-vy-bNB" firstAttribute="leading" secondItem="kgX-DY-kKp" secondAttribute="trailing" constant="8" id="HyD-NA-kAu"/>
                                                 <constraint firstItem="dCT-hs-GeA" firstAttribute="top" secondItem="F9e-Id-em1" secondAttribute="topMargin" constant="-8" id="dc7-8C-jNE"/>
                                                 <constraint firstItem="Iaz-rK-ryq" firstAttribute="leading" secondItem="F9e-Id-em1" secondAttribute="leadingMargin" id="iOW-nQ-Fsg"/>

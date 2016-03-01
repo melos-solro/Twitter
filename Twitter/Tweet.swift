@@ -17,6 +17,8 @@ class Tweet: NSObject {
     var username: NSString?
     var userURL: NSURL?
     var id: NSString?
+    var retweetStatus: Bool = false
+    var favoriteStatus: Bool = false
     
     init(dictionary: NSDictionary){
         id = dictionary["id_str"] as? String
@@ -35,6 +37,18 @@ class Tweet: NSObject {
             userURL = NSURL(string: userURLstring!)
         } else {
             userURL = nil
+        }
+        let fav = dictionary["favorited"] as! Int
+        if fav == 1 {
+            favoriteStatus = true
+        } else {
+            favoriteStatus = false
+        }
+        let retw = dictionary["retweeted"] as! Int
+        if retw == 1 {
+            retweetStatus = true
+        } else {
+            retweetStatus = false
         }
     }
     

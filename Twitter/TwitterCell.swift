@@ -23,10 +23,22 @@ class TwitterCell: UITableViewCell {
     
     @IBAction func onFavorite(sender: AnyObject) {
         TwitterClient.sharedInstance.favorite(id!, count: tweet.favoritesCount)
+        if tweet.favoriteStatus == false {
+            tweet.favoriteStatus = true
+            tweet.favoritesCount++
+        }
+        let fvx = tweet.favoritesCount
+        favoriteLabel.text = "Fav: \(fvx)"
     }
     
     @IBAction func onRetweet(sender: AnyObject) {
         TwitterClient.sharedInstance.retweet(id!, count: tweet.retweetCount)
+        if tweet.retweetStatus == false {
+            tweet.retweetStatus = true
+            tweet.retweetCount++
+        }
+        let rtx = tweet.retweetCount
+        retweetLabel.text = "RT: \(rtx)"
     }
     var tweet: Tweet! {
         didSet{
