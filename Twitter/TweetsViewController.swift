@@ -52,7 +52,6 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             print("Tweets: \(self.tweets.count)")
             return self.tweets.count
         } else {
-            print("No tweets found.")
             return 0
         }
     }
@@ -62,6 +61,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier("TwitterCell", forIndexPath: indexPath) as! TwitterCell
         tweet = self.tweets![indexPath.row]
         cell.tweet = tweet
+        cell.id = tweet.id as! String
         cell.tweetText.text = tweet.text as! String
          let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"

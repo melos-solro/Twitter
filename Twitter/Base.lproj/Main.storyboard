@@ -120,11 +120,33 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iaz-rK-ryq">
+                                                    <rect key="frame" x="0.0" y="104" width="62" height="30"/>
+                                                    <state key="normal" title="Button">
+                                                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onFavorite:" destination="gU2-Ol-179" eventType="touchUpInside" id="CR0-Z6-AKk"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KnF-rb-O3s">
+                                                    <rect key="frame" x="61" y="104" width="62" height="30"/>
+                                                    <state key="normal" title="Button">
+                                                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onFavorite:" destination="gU2-Ol-179" eventType="touchUpInside" id="Fic-eE-dFN"/>
+                                                        <action selector="onRetweet:" destination="gU2-Ol-179" eventType="touchUpInside" id="0j8-LU-nAX"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="vvG-jA-39e" secondAttribute="trailing" id="11m-ui-pph"/>
                                                 <constraint firstItem="0FK-vy-bNB" firstAttribute="leading" secondItem="kgX-DY-kKp" secondAttribute="trailing" constant="8" id="HyD-NA-kAu"/>
                                                 <constraint firstItem="dCT-hs-GeA" firstAttribute="top" secondItem="F9e-Id-em1" secondAttribute="topMargin" constant="-8" id="dc7-8C-jNE"/>
+                                                <constraint firstItem="Iaz-rK-ryq" firstAttribute="leading" secondItem="F9e-Id-em1" secondAttribute="leadingMargin" id="iOW-nQ-Fsg"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="vvG-jA-39e" secondAttribute="trailing" id="k2a-iJ-Bg4"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="dCT-hs-GeA" secondAttribute="trailing" constant="-8" id="kky-dO-xrW"/>
                                                 <constraint firstItem="vvG-jA-39e" firstAttribute="leading" secondItem="4LO-Vp-GVP" secondAttribute="trailing" id="lf5-zL-8QC"/>

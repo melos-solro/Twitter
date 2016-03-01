@@ -18,6 +18,16 @@ class TwitterCell: UITableViewCell {
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var favoriteLabel: UILabel!
     @IBOutlet weak var retweetLabel: UILabel!
+    
+    var id: String?
+    
+    @IBAction func onFavorite(sender: AnyObject) {
+        TwitterClient.sharedInstance.favorite(id!, count: tweet.favoritesCount)
+    }
+    
+    @IBAction func onRetweet(sender: AnyObject) {
+        TwitterClient.sharedInstance.retweet(id!, count: tweet.retweetCount)
+    }
     var tweet: Tweet! {
         didSet{
             tweetText.text = self.tweet.text as! String
