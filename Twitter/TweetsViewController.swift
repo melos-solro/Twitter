@@ -16,9 +16,14 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     }
     var tweets: [Tweet]!
 
+    let twitterColor = UIColor(red: 85.0/255.0, green: 172.0/255.0, blue: 238.0/255.0, alpha: 1)
+    
+    let mediumGreyColor = UIColor(red: 204.0/255.0, green: 214.0/255.0, blue: 221.0/255.0, alpha: 1)
+    
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userHandleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +37,20 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             self.tweets = tweets
             self.tableView.reloadData()
             self.userNameLabel.text = client.getUserName()
+            self.userHandleLabel.text = client.getUserHandle()
             self.avatarImageView.setImageWithURL(client.getImageUrl())
         }) { (error:NSError) -> () in
             print(error.localizedDescription)
         }
         tableView.separatorStyle = .SingleLine
         self.tableView.contentInset = UIEdgeInsetsMake(10,0,10,0)
+        self.tableView.separatorInset = UIEdgeInsetsZero
+        self.navigationController?.navigationBar.backgroundColor = twitterColor
+        
+        //Trying to put twitter logo in Navbar here
+        //let logo = UIImage(named: "TwitterLogo_white.png")
+        //self.navigationItem.titleView = UIImageView(image:logo)
+        //self.navigationItem.titleView?.sizeToFit()
         // Do any additional setup after loading the view.
         tableView.reloadData()
     }

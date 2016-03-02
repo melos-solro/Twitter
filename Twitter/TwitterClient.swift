@@ -110,6 +110,10 @@ class TwitterClient: BDBOAuth1SessionManager {
         return User.currentUser!.name as! String
     }
     
+    func getUserHandle() -> String {
+        return User.currentUser!.screenname as! String
+    }
+    
     func getImageUrl() -> NSURL {
         return User.currentUser!.profileUrl!
     }
