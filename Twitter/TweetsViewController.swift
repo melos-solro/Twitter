@@ -43,7 +43,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             print(error.localizedDescription)
         }
         tableView.separatorStyle = .SingleLine
-        self.tableView.contentInset = UIEdgeInsetsMake(10,0,10,0)
+        self.tableView.contentInset = UIEdgeInsetsMake(20,0,10,0)
         self.tableView.separatorInset = UIEdgeInsetsZero
         self.navigationController?.navigationBar.backgroundColor = twitterColor
         

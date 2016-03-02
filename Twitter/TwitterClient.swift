@@ -105,6 +105,15 @@ class TwitterClient: BDBOAuth1SessionManager {
         
     }
 
+    func unFavorite(string: String, var count: Int){
+        
+        TwitterClient.sharedInstance.POST("1.1/favorites/destroy.json?id=\(string)", parameters: nil, progress: nil, success: { (NSURLSessionDataTask, response: AnyObject?) -> Void in
+            count = count + 1
+            }, failure: { (task: NSURLSessionDataTask?, error: NSError) -> Void in
+                print("error: \(error.localizedDescription)")
+        })
+        
+    }
     
     func getUserName() -> String {
         return User.currentUser!.name as! String

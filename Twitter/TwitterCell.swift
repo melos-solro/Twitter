@@ -23,6 +23,13 @@ class TwitterCell: UITableViewCell {
     @IBOutlet weak var replyButton: UIButton!
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var retweetButton: UIButton!
+
+    let offRTImage = UIImage(named: "retweet-action.png") as UIImage?
+    let onRTImage = UIImage(named: "retweet-action-on.png") as UIImage?
+    let offFavImage = UIImage(named: "like-action.png")
+    let onFavImage = UIImage(named: "like-action-on.png")
+    
+    
     
     var id: String?
     
@@ -32,14 +39,13 @@ class TwitterCell: UITableViewCell {
     
     @IBAction func onFavorite(sender: AnyObject) {
         TwitterClient.sharedInstance.favorite(id!, count: tweet.favoritesCount)
-        let offImage = UIImage(named: "like-action.png")
-        let onImage = UIImage(named: "like-action-on.png")
         if tweet.favoriteStatus == false {
             tweet.favoriteStatus = true
             tweet.favoritesCount++
-            favoriteButton.setImage(onImage, forState: .Normal)
+            favoriteButton.setImage(onFavImage, forState: .Normal)
         } else {
-            favoriteButton.setImage(offImage, forState: .Normal)
+            TwitterClient.sharedInstance.unFavorite(id!,count: tweet.favoritesCount)
+            favoriteButton.setImage(offFavImage, forState: .Normal)
         }
         let fvx = tweet.favoritesCount
         favoriteLabel.text = "\(fvx)"
@@ -47,14 +53,10 @@ class TwitterCell: UITableViewCell {
     
     @IBAction func onRetweet(sender: AnyObject) {
         TwitterClient.sharedInstance.retweet(id!, count: tweet.retweetCount)
-        let onImage = UIImage(named: "retweet-action-on.png") as UIImage?
-        let offImage = UIImage(named: "retweet-action.png") as UIImage?
         if tweet.retweetStatus == false {
             tweet.retweetStatus = true
             tweet.retweetCount++
-            retweetButton.setImage(onImage, forState: .Normal)
-        } else {
-            retweetButton.setImage(offImage, forState: .Normal)
+            retweetButton.setImage(onRTImage, forState: .Normal)
         }
         let rtx = tweet.retweetCount
         retweetLabel.text = "\(rtx)"
@@ -71,7 +73,13 @@ class TwitterCell: UITableViewCell {
             userLabel.text = self.tweet.username as? String
             if tweet.userURL != nil {
                 userImageView.setImageWithURL(tweet.userURL!)
+            }
+            if tweet.favoriteStatus == true {
+                favoriteButton.setImage(onFavImage, forState: .Normal)
             } else {
+                favoriteButton.setImage(offFavImage, forState: .Normal)
+            }
+            if tweet.retweetStatus == true {
                 
             }
         }
