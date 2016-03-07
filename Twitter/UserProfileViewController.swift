@@ -17,8 +17,8 @@ class UserProfileViewController: UIViewController {
     @IBOutlet weak var tweetsLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
     
-    var username: String!
-    var userHandle: String!
+    var username: String?
+    var userHandle: String?
     var userURL: NSURL?
     var backgroundURL: NSURL?
     var userTweets: Int? = 0
@@ -27,14 +27,20 @@ class UserProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         nameLabel.text = username
         navigationItem.title = "@\(userHandle)"
-        profileImageView.setImageWithURL(userURL!)
-        backgroundImageView.setImageWithURL(backgroundURL!)
-        tweetsLabel.text = "\(userTweets)"
-        followersLabel.text = "\(userFollowers)"
-        followingLabel.text = "\(userFollowing)"
+        print("Username: \(username)")
+        print("Handle: @\(userHandle)")
+        if userURL != nil {
+            profileImageView.setImageWithURL(userURL!)
+        }
+        if backgroundURL != nil {
+            backgroundImageView.setImageWithURL(backgroundURL!)
+        }
+        tweetsLabel.text = "\(userTweets!)"
+        followersLabel.text = "\(userFollowers!)"
+        followingLabel.text = "\(userFollowing!)"
         
         // Do any additional setup after loading the view.
     }

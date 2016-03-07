@@ -236,7 +236,9 @@
                                     <constraint firstAttribute="height" constant="61" id="RLD-hL-kvc"/>
                                     <constraint firstAttribute="width" constant="61" id="njr-eF-SAX"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="3CE-MA-fxL" kind="show" identifier="userProfileSegue" id="pAU-yt-Cps"/>
                                 </connections>
@@ -459,6 +461,7 @@
                                     <navigationItem title="New Tweet" id="4hT-dY-aji">
                                         <barButtonItem key="backBarButtonItem" title="detailReturn" id="gvH-E0-xml"/>
                                         <barButtonItem key="rightBarButtonItem" title="Post" id="77q-4I-z52">
+                                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="postTweet:" destination="M2Y-dx-bUd" id="Byp-sk-2sI"/>
                                             </connections>
@@ -469,7 +472,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VJ0-4F-N8j">
                                 <rect key="frame" x="0.0" y="64" width="320" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                 <connections>
                                     <action selector="postTweet:" destination="M2Y-dx-bUd" eventType="editingDidEnd" id="uaf-MQ-rsv"/>
                                     <action selector="postTweetEnd:" destination="M2Y-dx-bUd" eventType="editingDidEnd" id="9Tn-zX-XPh"/>
@@ -533,19 +536,19 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqY-dh-7Xn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqY-dh-7Xn">
                                 <rect key="frame" x="92" y="215" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTz-oT-W96">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTz-oT-W96">
                                 <rect key="frame" x="92" y="244" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Do4-Mr-GSV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Do4-Mr-GSV">
                                 <rect key="frame" x="92" y="273" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -573,9 +576,9 @@
                             <constraint firstItem="RyK-ER-R9j" firstAttribute="leading" secondItem="UqT-EM-zjC" secondAttribute="leadingMargin" constant="4" id="REQ-gn-vUA"/>
                             <constraint firstItem="pTz-oT-W96" firstAttribute="leading" secondItem="6cM-c4-ky1" secondAttribute="trailing" constant="8" id="YBa-eG-TN8"/>
                             <constraint firstItem="xV0-Zw-on4" firstAttribute="leading" secondItem="UqT-EM-zjC" secondAttribute="leadingMargin" constant="-20" id="dNN-Il-9zL"/>
-                            <constraint firstItem="jqY-dh-7Xn" firstAttribute="centerX" secondItem="RyK-ER-R9j" secondAttribute="centerX" id="fu9-J4-yo6"/>
                             <constraint firstItem="jPn-aM-C3s" firstAttribute="top" secondItem="C5b-Ov-3Ag" secondAttribute="bottom" constant="41" id="iI5-VT-fip"/>
                             <constraint firstItem="pTz-oT-W96" firstAttribute="top" secondItem="jqY-dh-7Xn" secondAttribute="bottom" constant="8" id="ic4-2f-1cP"/>
+                            <constraint firstItem="jqY-dh-7Xn" firstAttribute="top" secondItem="ama-D8-JNR" secondAttribute="bottom" constant="8" id="pLO-NG-IWi"/>
                             <constraint firstItem="8y1-FD-l8f" firstAttribute="leading" secondItem="UqT-EM-zjC" secondAttribute="leadingMargin" constant="-13" id="puZ-7o-Dtg"/>
                             <constraint firstItem="jqY-dh-7Xn" firstAttribute="leading" secondItem="RyK-ER-R9j" secondAttribute="trailing" constant="8" id="qXG-Je-Nd3"/>
                             <constraint firstItem="6cM-c4-ky1" firstAttribute="leading" secondItem="UqT-EM-zjC" secondAttribute="leadingMargin" constant="-13" id="rFO-Bs-u2E"/>

@@ -56,9 +56,9 @@ class Tweet: NSObject {
         } else {
             retweetStatus = false
         }
-        followers = (dictionary["user"]!["followers_count"] as? Int)!
-        following = (dictionary["user"]!["friends_count"] as? Int)!
-        tweetNum = (dictionary["user"]!["statuses_count"] as? Int)!
+        followers = (dictionary["user"]!["followers_count"] as? Int) ?? 0
+        following = (dictionary["user"]!["friends_count"] as? Int) ?? 0
+        tweetNum = (dictionary["user"]!["statuses_count"] as? Int) ?? 0
     }
     
     class func tweetsWithArray(dictionaries: [NSDictionary]) -> [Tweet]{

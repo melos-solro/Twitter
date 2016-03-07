@@ -35,10 +35,10 @@ class User: NSObject {
         if let backgroundUrlString = backgroundUrlString {
             backgroundURL = NSURL(string: backgroundUrlString)
         }
-//        tweets = dictionary["statuses_count"] as? Int
-//        following = dictionary["friends_count"] as? Int
-//        followers = dictionary["follower_count"] as? Int
-//        tagline = dictionary["description"] as? String
+        tweets = dictionary["statuses_count"] as? Int
+        following = dictionary["friends_count"] as? Int
+        followers = dictionary["follower_count"] as? Int
+        tagline = dictionary["description"] as? String
     }
     
     static var _currentUser: User?

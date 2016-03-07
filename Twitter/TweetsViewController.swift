@@ -106,13 +106,16 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         if(segue.identifier == "userProfileSegue") {
             let profileViewController = segue.destinationViewController as! UserProfileViewController
             TwitterClient.sharedInstance.currentAccount({ (user: User) -> () in
-                profileViewController.userHandle = user.name as? String
-                profileViewController.username = user.screenname as? String
+                print(user.name!)
+                print(user.screenname!)
+                profileViewController.userHandle = user.screenname! as String
+                profileViewController.username = user.name! as String
+                print(profileViewController.username)
                 profileViewController.userURL = user.profileUrl
                 profileViewController.backgroundURL = user.backgroundURL!
-//                profileViewController.userTweets = user.tweets
-//                profileViewController.userFollowing = user.following
-//                profileViewController.userFollowers = user.followers
+                profileViewController.userTweets = user.tweets
+                profileViewController.userFollowing = user.following
+                profileViewController.userFollowers = user.followers
 
                 }) { (error:NSError) -> () in
                     print(error.localizedDescription)
