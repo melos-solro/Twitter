@@ -20,8 +20,12 @@ class Tweet: NSObject {
     var retweetStatus: Bool = false
     var favoriteStatus: Bool = false
     var userHandle: NSString?
+    var followers: Int = 0
+    var following: Int = 0
+    var tweetNum: Int = 0
     
     init(dictionary: NSDictionary){
+        print(dictionary)
         id = dictionary["id_str"] as? String
         userHandle = dictionary["user"]!["screen_name"] as?String
         text = dictionary["text"] as? String
@@ -52,6 +56,9 @@ class Tweet: NSObject {
         } else {
             retweetStatus = false
         }
+        followers = (dictionary["user"]!["followers_count"] as? Int)!
+        following = (dictionary["user"]!["friends_count"] as? Int)!
+        tweetNum = (dictionary["user"]!["statuses_count"] as? Int)!
     }
     
     class func tweetsWithArray(dictionaries: [NSDictionary]) -> [Tweet]{

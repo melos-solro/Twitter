@@ -56,14 +56,24 @@ class DetailViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if (segue.identifier == "profileSegue") {
+            let profileViewConrtroller = segue.destinationViewController as! UserProfileViewController
+            profileViewConrtroller.userHandle = (tweet.userHandle as? String)!
+            profileViewConrtroller.username = (tweet.username as? String)!
+            profileViewConrtroller.userURL = tweet.userURL
+            profileViewConrtroller.userHandle = (tweet.userHandle as? String)!
+            profileViewConrtroller.userHandle = (tweet.userHandle as? String)!
+            
+        }
+        
     }
-    */
+    
 
 }
