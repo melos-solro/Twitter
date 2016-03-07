@@ -254,6 +254,11 @@
                                 <action selector="onLogoutButton:" destination="oex-UJ-jdW" id="q3r-oH-hN7"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="New Tweet" id="yIa-JN-qWm">
+                            <connections>
+                                <segue destination="M2Y-dx-bUd" kind="show" id="TPD-vB-yxg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -436,6 +441,52 @@
             </objects>
             <point key="canvasLocation" x="1383" y="305"/>
         </scene>
+        <!--Compose View Controller-->
+        <scene sceneID="3Vx-FA-UXN">
+            <objects>
+                <viewController id="M2Y-dx-bUd" customClass="ComposeViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0zJ-ac-8gH"/>
+                        <viewControllerLayoutGuide type="bottom" id="DkR-fg-cEe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kJ7-dn-c3N">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F4K-q6-5bU">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="New Tweet" id="4hT-dY-aji">
+                                        <barButtonItem key="backBarButtonItem" title="detailReturn" id="gvH-E0-xml"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Post" id="77q-4I-z52">
+                                            <connections>
+                                                <action selector="postTweet:" destination="M2Y-dx-bUd" id="Byp-sk-2sI"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VJ0-4F-N8j">
+                                <rect key="frame" x="0.0" y="64" width="320" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="postTweet:" destination="M2Y-dx-bUd" eventType="editingDidEnd" id="uaf-MQ-rsv"/>
+                                    <action selector="postTweetEnd:" destination="M2Y-dx-bUd" eventType="editingDidEnd" id="9Tn-zX-XPh"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="textEntry" destination="VJ0-4F-N8j" id="OzU-9B-nvY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vzj-1y-Niu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2132" y="305"/>
+        </scene>
         <!--User Profile View Controller-->
         <scene sceneID="yWW-d7-xsK">
             <objects>
@@ -545,7 +596,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z1W-p6-7Ee" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1749" y="305"/>
+            <point key="canvasLocation" x="1761" y="305"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ilh-fZ-d7X">
