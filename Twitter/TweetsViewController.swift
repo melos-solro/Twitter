@@ -80,8 +80,8 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
          let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
         cell.tweetTime.text = formatter.stringFromDate(tweet.timestamp!)
-        cell.favoriteLabel.text = "Fav: \(tweet.favoritesCount)"
-        cell.retweetLabel.text = "RT: \(tweet.retweetCount)"
+        cell.favoriteLabel.text = "\(tweet.favoritesCount)"
+        cell.retweetLabel.text = "\(tweet.retweetCount)"
         cell.userLabel.text = tweet.username as? String
         if tweet.userURL != nil {
             cell.userImageView.setImageWithURL(tweet.userURL!)
@@ -89,14 +89,22 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if(segue.identifier == "detailSegue") {
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)
+            let tweet = tweets![indexPath!.row]
+            let detailViewController = segue.destinationViewController as! DetailViewController
+            detailViewController.tweet = tweet
+            
+        }
+        
     }
-    */
+
 
 }
