@@ -37,7 +37,7 @@ class User: NSObject {
         }
         tweets = dictionary["statuses_count"] as? Int
         following = dictionary["friends_count"] as? Int
-        followers = dictionary["follower_count"] as? Int
+        followers = dictionary["followers_count"] as? Int
         tagline = dictionary["description"] as? String
     }
     

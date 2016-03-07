@@ -117,6 +117,12 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
                 profileViewController.userFollowing = user.following
                 profileViewController.userFollowers = user.followers
 
+                profileViewController.nameLabel.text = user.name! as String
+                profileViewController.navigationItem.title = "@\(user.screenname!)"
+                profileViewController.tweetsLabel.text = "\(user.tweets!)"
+                profileViewController.followersLabel.text = "\(user.followers!)"
+                profileViewController.followingLabel.text = "\(user.following!)"
+                
                 }) { (error:NSError) -> () in
                     print(error.localizedDescription)
             }

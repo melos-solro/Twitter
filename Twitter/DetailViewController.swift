@@ -64,12 +64,17 @@ class DetailViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if (segue.identifier == "profileSegue") {
-            let profileViewConrtroller = segue.destinationViewController as! UserProfileViewController
-            profileViewConrtroller.userHandle = (tweet.userHandle as? String)!
-            profileViewConrtroller.username = (tweet.username as? String)!
-            profileViewConrtroller.userURL = tweet.userURL
-            profileViewConrtroller.userHandle = (tweet.userHandle as? String)!
-            profileViewConrtroller.userHandle = (tweet.userHandle as? String)!
+            let profileViewController = segue.destinationViewController as! UserProfileViewController
+            profileViewController.userHandle = (tweet.userHandle as? String)!
+            profileViewController.username = (tweet.username as? String)!
+            profileViewController.userURL = tweet.userURL
+            profileViewController.userHandle = (tweet.userHandle as? String)!
+            profileViewController.userHandle = (tweet.userHandle as? String)!
+            
+//            profileViewController.profileImageView.image = detailProfileImage.image
+//            profileViewController.tweetsLabel.text = "\(tweet.tweetNum)"
+//            profileViewController.followingLabel.text = "\(tweet.following)"
+//            profileViewController.followersLabel.text = "\(tweet.followers)"
             
         }
         
